@@ -27,11 +27,16 @@ function Login() {
     formData
   );
 
-  localStorage.setItem("token", response.data.token);
+localStorage.setItem("token", response.data.token);
+localStorage.setItem("user", JSON.stringify(response.data.user));
 
-  toast.success("Login Successful");
+toast.success("Login Successful");
 
+if (response.data.user.role === "admin") {
   navigate("/dashboard");
+} else {
+  navigate("/creator-studio");
+}
 
 } catch (error) {
 

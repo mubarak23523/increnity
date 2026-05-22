@@ -8,7 +8,8 @@ import Contact from "./pages/Contact";
 import Users from "./pages/Users";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
-
+import AdminRoute from "./components/AdminRoute";
+import CreatorStudio from "./pages/CreatorStudio";
 import Dashboard from "./pages/Dashboard";
 import Projects from "./pages/Projects";
 import Services from "./pages/Services";
@@ -37,9 +38,9 @@ function App() {
         <Route
           path="/dashboard"
           element={
-            <ProtectedRoute>
-              <Dashboard />
-            </ProtectedRoute>
+            <AdminRoute>
+  <Dashboard />
+</AdminRoute>
           }
         />
 
@@ -88,7 +89,14 @@ function App() {
     </ProtectedRoute>
   }
 />
-
+<Route
+  path="/creator-studio"
+  element={
+    <ProtectedRoute>
+      <CreatorStudio />
+    </ProtectedRoute>
+  }
+/>
   <Route
     path="/my-projects"
     element={
