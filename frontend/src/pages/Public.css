@@ -1211,63 +1211,47 @@ body {
 /* ========================= */
 /* RESPONSIVE */
 /* ========================= */
-
-@media (max-width: 992px) {
-
-  .public-navbar {
-    padding: 18px 5%;
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  .public-navbar div {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 18px;
-  }
-}
+/* ================= MOBILE NAVBAR FIX ================= */
 
 @media (max-width: 768px) {
+
+  .public-navbar {
+    width: 100%;
+    padding: 14px 16px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background: rgba(10, 15, 30, 0.95);
+
+    position: sticky;
+    top: 0;
+    z-index: 999;
+  }
 
   .public-navbar h2 {
     font-size: 26px;
+    margin-bottom: 14px;
   }
 
   .public-navbar div {
     width: 100%;
-    flex-direction: column;
-    align-items: center;
-    gap: 16px;
-  }
 
-  .public-navbar a {
-    width: 100%;
-    text-align: center;
-  }
-
-  .admin-link {
-    width: 100%;
-  }
-}
-@media (max-width: 768px) {
-  .public-navbar {
-    padding: 14px 16px;
-    flex-direction: column;
-    gap: 14px;
-  }
-
-  .public-navbar h2 {
-    font-size: 24px;
-  }
-
-  .public-navbar div {
-    width: 100%;
     display: flex;
     flex-direction: row;
-    overflow-x: auto;
+
+    align-items: center;
+    justify-content: flex-start;
+
     gap: 12px;
-    padding-bottom: 8px;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
     white-space: nowrap;
+
+    padding-bottom: 6px;
   }
 
   .public-navbar div::-webkit-scrollbar {
@@ -1276,13 +1260,27 @@ body {
 
   .public-navbar a {
     flex: 0 0 auto;
-    width: auto;
+
+    text-decoration: none;
+
     font-size: 13px;
-    padding: 8px 12px;
+
+    padding: 10px 14px;
+
+    border-radius: 30px;
+
+    background: rgba(255,255,255,0.06);
+
+    color: white;
   }
 
   .admin-link {
-    padding: 9px 16px;
-    width: auto;
+    background: linear-gradient(
+      135deg,
+      #00e5ff,
+      #7c3aed
+    ) !important;
+
+    color: white !important;
   }
 }
