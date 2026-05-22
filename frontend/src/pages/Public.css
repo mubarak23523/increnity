@@ -1284,3 +1284,72 @@ body {
     color: white !important;
   }
 }
+.public-navbar {
+  width: 100%;
+  padding: 18px 7%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(10, 15, 30, 0.95);
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+}
+
+.public-navbar h2 {
+  color: #00cfff;
+}
+
+.nav-menu {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+.nav-menu a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.admin-link {
+  padding: 10px 18px;
+  border-radius: 30px;
+  background: linear-gradient(135deg, #00e5ff, #7c3aed);
+}
+
+.menu-btn {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .menu-btn {
+    display: block;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 28px;
+  }
+
+  .nav-menu {
+    display: none;
+    position: absolute;
+    top: 70px;
+    left: 15px;
+    right: 15px;
+    flex-direction: column;
+    padding: 20px;
+    background: #0f172a;
+    border-radius: 18px;
+  }
+
+  .nav-menu.active {
+    display: flex;
+  }
+
+  .nav-menu a {
+    width: 100%;
+    text-align: center;
+    padding: 12px;
+  }
+}

@@ -15,13 +15,12 @@ const app = express();
 // Connect Database
 connectDB();
 
-// CORS FIX
-app.use(
-  cors({
-    origin: "https://increnity.vercel.app",
-    credentials: true,
-  })
-);
+// OPEN CORS FIX
+app.use(cors({
+  origin: "*",
+  methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
+  allowedHeaders: ["Content-Type", "Authorization"]
+}));
 
 app.use(express.json());
 
