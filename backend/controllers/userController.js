@@ -214,19 +214,7 @@ const updateProfile = async (req, res) => {
     });
   }
 };
-router.delete("/:id", protect, async (req, res) => {
-  try {
-    await User.findByIdAndDelete(req.params.id);
 
-    res.json({
-      message: "User deleted successfully",
-    });
-  } catch (error) {
-    res.status(500).json({
-      message: "Failed to delete user",
-    });
-  }
-});
 module.exports = {
   registerUser,
   loginUser,

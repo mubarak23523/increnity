@@ -35,3 +35,21 @@ router.put("/profile", protect, updateProfile);
 router.put("/change-password", protect, changePassword);
 
 module.exports = router;
+/* DELETE USER */
+router.delete("/:id", protect, async (req, res) => {
+  try {
+
+    await User.findByIdAndDelete(req.params.id);
+
+    res.json({
+      message: "User deleted successfully",
+    });
+
+  } catch (error) {
+
+    res.status(500).json({
+      message: "Failed to delete user",
+    });
+
+  }
+});
