@@ -920,3 +920,195 @@ a {
 .public-navbar div a {
   margin-left: 0 !important;
 }
+/* ============================= */
+/* MOBILE RESPONSIVE FIX */
+/* ============================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* Tablet */
+@media (max-width: 992px) {
+  .dashboard,
+  .admin-dashboard,
+  .main-layout,
+  .layout {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+
+  .main-content,
+  .content,
+  .dashboard-content {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .cards,
+  .project-grid,
+  .service-grid,
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+
+  .container,
+  .wrapper,
+  .main-content,
+  .content,
+  .dashboard-content {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .login-page,
+  .login-container,
+  .login-wrapper {
+    min-height: 100vh;
+    padding: 20px 12px;
+    flex-direction: column;
+  }
+
+  .login-left,
+  .login-right,
+  .login-card {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .login-card {
+    padding: 25px 18px;
+    border-radius: 20px;
+  }
+
+  .login-card h1,
+  .login-card h2 {
+    font-size: 26px;
+    line-height: 1.2;
+  }
+
+  input,
+  textarea,
+  select,
+  button {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  button {
+    min-height: 45px;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: auto;
+    padding: 12px;
+  }
+
+  .sidebar ul,
+  .sidebar-menu {
+    display: flex;
+    overflow-x: auto;
+    gap: 10px;
+    padding-bottom: 8px;
+  }
+
+  .sidebar li,
+  .sidebar-menu a {
+    white-space: nowrap;
+  }
+
+  .navbar,
+  .topbar,
+  .header {
+    width: 100%;
+    padding: 12px 15px;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .cards,
+  .project-grid,
+  .service-grid,
+  .stats-grid,
+  .image-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .card,
+  .project-card,
+  .service-card,
+  .stat-card {
+    width: 100%;
+  }
+
+  table {
+    width: 100%;
+    min-width: 700px;
+  }
+
+  .table-wrapper,
+  .table-container {
+    width: 100%;
+    overflow-x: auto;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .main-content,
+  .content,
+  .dashboard-content {
+    padding: 12px;
+  }
+
+  h1 {
+    font-size: 26px;
+  }
+
+  h2 {
+    font-size: 22px;
+  }
+
+  p {
+    font-size: 14px;
+  }
+
+  .login-card {
+    padding: 22px 15px;
+  }
+
+  .login-card input {
+    height: 48px;
+    font-size: 14px;
+  }
+
+  .login-card button {
+    height: 50px;
+    font-size: 15px;
+  }
+}
