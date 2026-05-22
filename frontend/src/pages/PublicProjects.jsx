@@ -11,7 +11,7 @@ function PublicProjects() {
     try {
 
       const response = await axios.get(
-        "http://localhost:5000/api/projects"
+        "https://increnity.onrender.com/api/projects"
       );
 
       setProjects(response.data);

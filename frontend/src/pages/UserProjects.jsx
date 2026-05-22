@@ -25,7 +25,7 @@ function UserProjects() {
       const token = localStorage.getItem("token");
 
       const response = await axios.get(
-        "http://localhost:5000/api/projects/my-projects",
+        "https://increnity.onrender.com/api/projects/my-projects",
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -63,7 +63,7 @@ function UserProjects() {
       const token = localStorage.getItem("token");
 
       await axios.post(
-        "http://localhost:5000/api/projects",
+        "https://increnity.onrender.com/api/projects",
         formData,
         {
           headers: {
@@ -159,7 +159,7 @@ function UserProjects() {
         uploadData.append("image", file);
 
         const response = await axios.post(
-          "http://localhost:5000/api/upload",
+          "https://increnity.onrender.com/api/upload",
           uploadData
         );
 

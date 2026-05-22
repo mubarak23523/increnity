@@ -27,7 +27,7 @@ function Settings() {
       const token = localStorage.getItem("token");
 
       const response = await axios.get(
-        "http://localhost:5000/api/users/profile",
+        "https://increnity.onrender.com/api/users/profile",
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -80,7 +80,7 @@ function Settings() {
       const token = localStorage.getItem("token");
 
       await axios.put(
-        "http://localhost:5000/api/users/profile",
+        "https://increnity.onrender.com/api/users/profile",
         {
           ...profileData,
           skills: profileData.skills
@@ -111,7 +111,7 @@ function Settings() {
       const token = localStorage.getItem("token");
 
       const response = await axios.put(
-        "http://localhost:5000/api/users/change-password",
+        "https://increnity.onrender.com/api/users/change-password",
         passwordData,
         {
           headers: {

@@ -15,7 +15,7 @@ function Services() {
 
   const fetchServices = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/api/services");
+      const response = await axios.get("https://increnity.onrender.com/api/services");
       setServices(response.data);
     } catch (error) {
       console.log(error);
@@ -41,7 +41,7 @@ function Services() {
 
       if (serviceEditId) {
         await axios.put(
-          `http://localhost:5000/api/services/${serviceEditId}`,
+          `https://increnity.onrender.com/api/services/${serviceEditId}`,
           serviceForm,
           {
             headers: {
@@ -53,7 +53,7 @@ function Services() {
         toast.success("Service Updated Successfully");
         setServiceEditId(null);
       } else {
-        await axios.post("http://localhost:5000/api/services", serviceForm, {
+        await axios.post("https://increnity.onrender.com/api/services", serviceForm, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -91,7 +91,7 @@ function Services() {
     try {
       const token = localStorage.getItem("token");
 
-      await axios.delete(`http://localhost:5000/api/services/${id}`, {
+      await axios.delete(`https://increnity.onrender.com/api/services/${id}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

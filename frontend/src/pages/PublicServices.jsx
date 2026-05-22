@@ -9,7 +9,7 @@ function PublicServices() {
   const fetchServices = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:5000/api/services"
+        "https://increnity.onrender.com/api/services"
       );
 
       setServices(response.data);

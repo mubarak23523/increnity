@@ -25,7 +25,7 @@ function Contact() {
     try {
 
       await axios.post(
-        "http://localhost:5000/api/messages",
+        "https://increnity.onrender.com/api/messages",
         formData
       );
 

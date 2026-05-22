@@ -13,7 +13,7 @@ function Dashboard() {
     try {
       const token = localStorage.getItem("token");
 
-      const response = await axios.get("http://localhost:5000/api/users/profile", {
+      const response = await axios.get("https://increnity.onrender.com/api/users/profile", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -31,7 +31,7 @@ function Dashboard() {
       const token = localStorage.getItem("token");
 
       const response = await axios.get(
-        "http://localhost:5000/api/projects/my-projects",
+        "https://increnity.onrender.com/api/projects/my-projects",
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -48,7 +48,7 @@ function Dashboard() {
 
   const fetchCommunityProjects = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/api/projects");
+      const response = await axios.get("https://increnity.onrender.com/api/projects");
       setCommunityProjects(response.data);
     } catch (error) {
       console.log(error);

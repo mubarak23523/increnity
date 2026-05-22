@@ -10,7 +10,7 @@ function Messages() {
     try {
       const token = localStorage.getItem("token");
 
-      const response = await axios.get("http://localhost:5000/api/messages", {
+      const response = await axios.get("https://increnity.onrender.com/api/messages", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -32,7 +32,7 @@ function Messages() {
     try {
       const token = localStorage.getItem("token");
 
-      await axios.delete(`http://localhost:5000/api/messages/${id}`, {
+      await axios.delete(`https://increnity.onrender.com/api/messages/${id}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

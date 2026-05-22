@@ -11,7 +11,7 @@ function Projects() {
 
   const fetchProjects = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/api/projects");
+      const response = await axios.get("https://increnity.onrender.com/api/projects");
       setProjects(response.data);
     } catch (error) {
       console.log(error);
@@ -28,7 +28,7 @@ function Projects() {
       const token = localStorage.getItem("token");
 
       await axios.put(
-        `http://localhost:5000/api/projects/${id}`,
+        `https://increnity.onrender.com/api/projects/${id}`,
         { status },
         {
           headers: {
@@ -59,7 +59,7 @@ function Projects() {
     try {
       const token = localStorage.getItem("token");
 
-      await axios.delete(`http://localhost:5000/api/projects/${deleteId}`, {
+      await axios.delete(`https://increnity.onrender.com/api/projects/${deleteId}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
