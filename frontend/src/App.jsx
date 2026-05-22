@@ -24,14 +24,13 @@ function App() {
     <BrowserRouter>
       <Routes>
         {/* Public Routes */}
-        <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/projects-public" element={<PublicProjects />} />
         <Route path="/services-public" element={<PublicServices />} />
         <Route path="/contact" element={<Contact />} />
-
+<Route path="/" element={<Home />} />
+<Route path="/login" element={<Login />} />
         {/* Auth Routes */}
-        <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
 
         {/* Admin Routes */}
