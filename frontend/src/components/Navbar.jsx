@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 
 function Navbar() {
+
   const navigate = useNavigate();
 
   const handleLogout = () => {
@@ -9,12 +10,25 @@ function Navbar() {
   };
 
   return (
-    <div className="navbar">
-      <h3>Dashboard</h3>
+    <div className="dashboard-navbar">
 
-      <button onClick={handleLogout}>
-        Logout
-      </button>
+      <div className="dashboard-left">
+        <h2>Increnity Admin</h2>
+      </div>
+
+      <div className="dashboard-right">
+
+        
+
+        <button
+          className="logout-btn"
+          onClick={handleLogout}
+        >
+          Logout
+        </button>
+
+      </div>
+
     </div>
   );
 }

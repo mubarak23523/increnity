@@ -28,6 +28,9 @@ function Sidebar() {
         <li>
           <Link to="/my-projects">My Projects</Link>
         </li>
+        <li>
+          <Link to="/users">Users</Link>
+        </li>
       </ul>
     </div>
   );

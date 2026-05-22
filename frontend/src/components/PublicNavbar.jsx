@@ -18,6 +18,7 @@ function PublicNavbar() {
         <Link to="/services-public">Community</Link>
         <Link to="/about">Creators</Link>
         <Link to="/contact">Support</Link>
+        
         <Link to="/register" className="admin-link">Join Now</Link>
         <Link to="/login" className="admin-link">Admin Login</Link>
       </div>

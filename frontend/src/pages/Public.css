@@ -1171,3 +1171,78 @@ body {
 
   color: white !important;
 }
+.users-page {
+  min-height: 100vh;
+  padding: 30px;
+  background: #f8fafc;
+}
+
+.users-header {
+  margin-bottom: 25px;
+}
+
+.users-header h1 {
+  font-size: 32px;
+  color: #0f172a;
+}
+
+.users-header p {
+  margin-top: 8px;
+  color: #64748b;
+}
+
+.users-card {
+  background: white;
+  border-radius: 18px;
+  padding: 20px;
+  box-shadow: 0 12px 35px rgba(15, 23, 42, 0.08);
+}
+
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.users-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 700px;
+}
+
+.users-table th {
+  background: #0f172a;
+  color: white;
+  padding: 15px;
+  text-align: left;
+}
+
+.users-table td {
+  padding: 15px;
+  border-bottom: 1px solid #e5e7eb;
+  color: #334155;
+}
+
+.users-table tr:hover {
+  background: #f1f5f9;
+}
+
+@media (max-width: 768px) {
+  .users-page {
+    padding: 18px;
+  }
+
+  .users-header h1 {
+    font-size: 25px;
+  }
+
+  .users-card {
+    padding: 14px;
+    border-radius: 14px;
+  }
+
+  .users-table th,
+  .users-table td {
+    padding: 12px;
+    font-size: 14px;
+  }
+}

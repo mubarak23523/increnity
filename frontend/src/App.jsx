@@ -5,7 +5,7 @@ import About from "./pages/About";
 import PublicProjects from "./pages/PublicProjects";
 import PublicServices from "./pages/PublicServices";
 import Contact from "./pages/Contact";
-
+import Users from "./pages/Users";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 
@@ -78,9 +78,16 @@ function App() {
             </ProtectedRoute>
           }
         />
-      </Routes>
-         <Routes>
-
+     
+    
+<Route
+  path="/users"
+  element={
+    <ProtectedRoute>
+      <Users />
+    </ProtectedRoute>
+  }
+/>
 
   <Route
     path="/my-projects"
@@ -90,8 +97,8 @@ function App() {
       </ProtectedRoute>
     }
   />
+ </Routes>
 
-</Routes>
     </BrowserRouter>
   );
 }
