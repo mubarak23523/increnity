@@ -1246,3 +1246,23 @@ body {
     font-size: 14px;
   }
 }
+.delete-user-btn {
+
+  border: none;
+
+  padding: 9px 16px;
+
+  border-radius: 10px;
+
+  background: #dc2626;
+
+  color: white;
+
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.delete-user-btn:hover {
+  background: #b91c1c;
+}

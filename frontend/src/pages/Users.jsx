@@ -13,7 +13,36 @@ function Users() {
       .then((data) => setUsers(data))
       .catch((err) => console.log(err));
   }, []);
+const deleteUser = async (id) => {
+  const confirmDelete = window.confirm(
+    "Are you sure you want to delete this user?"
+  );
 
+  if (!confirmDelete) return;
+
+  try {
+    const res = await fetch(
+      `https://increnity.onrender.com/api/users/${id}`,
+      {
+        method: "DELETE",
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+      }
+    );
+
+    const data = await res.json();
+
+    if (res.ok) {
+      alert(data.message);
+      setUsers(users.filter((user) => user._id !== id));
+    } else {
+      alert(data.message);
+    }
+  } catch (error) {
+    alert("Failed to delete user");
+  }
+};
   return (
     <div className="users-page">
       <div className="users-header">
@@ -30,25 +59,35 @@ function Users() {
                 <th>Name</th>
                 <th>Email</th>
                 <th>Role</th>
+                <th>Action</th>
               </tr>
             </thead>
 
-            <tbody>
-              {users.length > 0 ? (
-                users.map((user, index) => (
-                  <tr key={user._id}>
-                    <td>{index + 1}</td>
-                    <td>{user.name || "No Name"}</td>
-                    <td>{user.email}</td>
-                    <td>{user.role || "user"}</td>
-                  </tr>
-                ))
-              ) : (
-                <tr>
-                  <td colSpan="4">No users found</td>
-                </tr>
-              )}
-            </tbody>
+           <tbody>
+  {users.length > 0 ? (
+    users.map((user, index) => (
+      <tr key={user._id}>
+        <td>{index + 1}</td>
+        <td>{user.name || "No Name"}</td>
+        <td>{user.email}</td>
+        <td>{user.role || "user"}</td>
+
+        <td>
+          <button
+            className="delete-user-btn"
+            onClick={() => deleteUser(user._id)}
+          >
+            Delete
+          </button>
+        </td>
+      </tr>
+    ))
+  ) : (
+    <tr>
+      <td colSpan="5">No users found</td>
+    </tr>
+  )}
+</tbody>
           </table>
         </div>
       </div>
