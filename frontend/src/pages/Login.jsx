@@ -35,7 +35,7 @@ toast.success("Login Successful");
 if (response.data.user.role === "admin") {
   navigate("/dashboard");
 } else {
-  navigate("/creator-studio");
+  navigate("/creator-home");
 }
 
 } catch (error) {
@@ -54,14 +54,14 @@ if (response.data.user.role === "admin") {
           ← Back to Increnity
         </Link>
 
-        <span className="badge">Admin Access</span>
+        <span className="badge">Secure Access</span>
 
-        <h1>Manage Your Creative Studio</h1>
+<h1>Welcome to Increnity</h1>
 
-        <p>
-          Login to control projects, services, messages and website content
-          through the Increnity admin dashboard.
-        </p>
+<p>
+  Login to access your dashboard, manage your profile, and continue your creative journey.
+</p>
+
       </div>
 
       <form onSubmit={handleSubmit} className="login-card">
@@ -84,7 +84,7 @@ if (response.data.user.role === "admin") {
           onChange={handleChange}
         />
 
-        <button type="submit">Login Dashboard</button>
+        <button type="submit">Login</button>
       </form>
     </div>
   );

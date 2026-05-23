@@ -9,12 +9,13 @@ import Users from "./pages/Users";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import AdminRoute from "./components/AdminRoute";
-import CreatorStudio from "./pages/CreatorStudio";
+import CreatorHome from "./pages/CreatorHome";
 import Dashboard from "./pages/Dashboard";
 import Projects from "./pages/Projects";
 import Services from "./pages/Services";
 import Messages from "./pages/Messages";
 import Settings from "./pages/Settings";
+import VerifyOtp from "./pages/VerifyOtp";
 
 import UserProjects from "./pages/UserProjects";
 
@@ -90,10 +91,10 @@ function App() {
   }
 />
 <Route
-  path="/creator-studio"
+  path="/creator-home"
   element={
     <ProtectedRoute>
-      <CreatorStudio />
+      <CreatorHome />
     </ProtectedRoute>
   }
 />
@@ -105,6 +106,7 @@ function App() {
       </ProtectedRoute>
     }
   />
+  <Route path="/verify-otp" element={<VerifyOtp />} />
  </Routes>
 
     </BrowserRouter>

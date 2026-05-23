@@ -24,31 +24,25 @@ function Register() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+try {
+  const response = await axios.post(
+    "https://increnity.onrender.com/api/users/register",
+    formData
+  );
 
-    try {
+  toast.success(response.data.message);
 
-      const response = await axios.post(
-        "https://increnity.onrender.com/api/users/register",
-        formData
-      );
-
-      localStorage.setItem(
-        "token",
-        response.data.token
-      );
-
-      toast.success("Account Created Successfully");
-
-      navigate("/dashboard");
-
-    } catch (error) {
-
-      toast.error(
-        error.response?.data?.message ||
-        "Registration failed"
-      );
-
-    }
+  navigate("/verify-otp", {
+    state: {
+      email: formData.email,
+    },
+  });
+} catch (error) {
+  toast.error(
+    error.response?.data?.message ||
+    "Registration failed"
+  );
+}
   };
 
   return (

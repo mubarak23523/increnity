@@ -20,6 +20,7 @@ const userSchema = new mongoose.Schema(
       required: true,
       unique: true,
       trim: true,
+      lowercase: true,
     },
 
     password: {
@@ -31,6 +32,21 @@ const userSchema = new mongoose.Schema(
       type: String,
       enum: ["user", "admin"],
       default: "user",
+    },
+
+    isVerified: {
+      type: Boolean,
+      default: false,
+    },
+
+    verificationOtp: {
+      type: String,
+      default: null,
+    },
+
+    verificationOtpExpires: {
+      type: Date,
+      default: null,
     },
 
     bio: {
