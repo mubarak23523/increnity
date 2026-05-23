@@ -48,36 +48,36 @@ function App() {
         <Route
           path="/projects"
           element={
-            <ProtectedRoute>
-              <Projects />
-            </ProtectedRoute>
+          <AdminRoute>
+  <Projects />
+</AdminRoute>
           }
         />
 
         <Route
           path="/services"
           element={
-            <ProtectedRoute>
-              <Services />
-            </ProtectedRoute>
+            <AdminRoute>
+  <services />
+</AdminRoute>
           }
         />
 
         <Route
           path="/messages"
           element={
-            <ProtectedRoute>
-              <Messages />
-            </ProtectedRoute>
+            <AdminRoute>
+  <messages />
+</AdminRoute>
           }
         />
 
         <Route
           path="/settings"
           element={
-            <ProtectedRoute>
-              <Settings />
-            </ProtectedRoute>
+           <AdminRoute>
+  <Settings />
+</AdminRoute>
           }
         />
      
@@ -85,9 +85,9 @@ function App() {
 <Route
   path="/users"
   element={
-    <ProtectedRoute>
-      <Users />
-    </ProtectedRoute>
+<AdminRoute>
+  <users />
+</AdminRoute>
   }
 />
 <Route

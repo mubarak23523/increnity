@@ -12,17 +12,20 @@ const {
   updateProfile,
 } = require("../controllers/userController");
 
-/* GET ALL USERS - ADMIN DASHBOARD */
+/* GET VERIFIED USERS ONLY */
 router.get("/", protect, async (req, res) => {
   try {
     const users = await User.find({
-  isVerified: true,
-})
-.select("-password")
-.sort({ createdAt: -1 });
+      isVerified: true,
+    })
+      .select("-password -verificationOtp -verificationOtpExpires")
+      .sort({ createdAt: -1 });
+
     res.json(users);
   } catch (error) {
-    res.status(500).json({ message: "Failed to fetch users" });
+    res.status(500).json({
+      message: "Failed to fetch users",
+    });
   }
 });
 
